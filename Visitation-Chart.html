@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Year 2000s');
+      data.addColumn('number', 'Arches');
+      data.addColumn('number', 'Zion');
+      data.addColumn('number', 'Bryce Canyon');
+      data.addColumn('number', 'Grand Canyon');
+      data.addColumn('number', 'Canyonland');
+      data.addColumn('number', 'Mesa Verde');
+      data.addColumn('number', 'Great Basin');
+      data.addColumn('number', 'Capitol Reef');
+
+      data.addRows([
+        [10,  1014405, 2665972, 1285492, 4388386, 435908, 559712, 88870, 662661],
+        [11,  1040758, 2825505, 1296000, 4298178, 473773, 572329, 91451, 668834],
+        [12,  1070577,  2973607, 1385352, 4421352, 452952, 488860, 94850, 673345],
+        [13,  1082866, 2807387, 1311875, 4564840, 462242, 460237, 92893, 663670],
+        [14,  1284767, 3189696, 1435741, 4756771, 542431, 501563, 107526, 786514],
+        [15,   1399247, 3648846, 1745804, 5520736, 634607, 547325, 116123, 941029],
+        [16,   1585718, 4295127,  2365110, 5969811, 776218, 583527, 144846, 1064904],
+        [17,  1539028, 4504812, 2571684, 6254238, 742271, 613788, 168028, 1150165],
+        [18,  1663557, 4320033, 2679478, 6380495, 739449, 563420, 153094, 1227627],
+        [19, 1659702, 4488268, 2594904, 5974411, 733996, 556203, 131802, 1226519],
+        [20,  1238083,  3591254, 1464655, 2897098, 493914, 287477, 120248, 981038]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Utah National Parks Visitation By Year',
+          subtitle: '2010-2020'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+</head>
+<body>
+  <div id="line_top_x"></div>
+</body>
+</html>
